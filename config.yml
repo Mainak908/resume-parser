@@ -1,0 +1,151 @@
+# OpenRouter Configuration
+site:
+  name: "Resume Parser API"
+  url: "https://localhost:5000"
+
+# Not all models support JSON Schema output. See the list here: https://openrouter.ai/models?fmt=cards&order=newest&supported_parameters=structured_outputs
+# Max of 3 models
+models:
+  - "google/gemini-2.0-flash-thinking-exp:free"
+  - "google/gemini-2.0-flash-exp:free"
+  - "google/gemini-exp-1121:free"
+
+general:
+  max_file_size: 16777216  # 16MB max file size
+  upload_folder: "uploads"
+
+resume_schema:
+  basics:
+    name:
+      firstName: string
+      middleName: string
+      lastName: string
+    label: string
+    image: string
+    email: string
+    phone: string
+    url: string
+    summary: string
+    location:
+      address: string
+      postalCode: string
+      city: string
+      state: string
+      country: string
+    profiles:
+      - network: string
+        username: string
+        url: string
+
+  work:
+    - company: string
+      position: string
+      website: string
+      startDate: string
+      endDate: string
+      summary: string
+      highlights:
+        - string
+      location: string
+      department: string
+      employmentType: string
+      responsibilities:
+        - string
+      achievements:
+        - string
+
+  education:
+    - institution: string
+      area: string
+      studyType: string
+      startDate: string
+      endDate: string
+      gpa: number
+      courses:
+        - string
+      description: string
+      activities:
+        - string
+      achievements:
+        - string
+      location: string
+
+  skills:
+    - name: string
+      level: string
+      keywords:
+        - string
+      yearsOfExperience: number
+
+  languages:
+    - language: string
+      fluency: string
+      certification: string
+
+  interests:
+    - name: string
+      keywords:
+        - string
+
+  certifications:
+    - name: string
+      issuer: string
+      date: string
+      url: string
+      validUntil: string
+
+  awards:
+    - title: string
+      date: string
+      awarder: string
+      summary: string
+
+  publications:
+    - name: string
+      publisher: string
+      releaseDate: string
+      url: string
+      summary: string
+
+  projects:
+    - name: string
+      description: string
+      highlights:
+        - string
+      keywords:
+        - string
+      startDate: string
+      endDate: string
+      url: string
+      roles:
+        - string
+      entity: string
+      type: string
+
+  volunteer:
+    - organization: string
+      position: string
+      website: string
+      startDate: string
+      endDate: string
+      summary: string
+      highlights:
+        - string
+
+  references:
+    - name: string
+      reference: string
+      position: string
+      company: string
+      email: string
+      phone: string
+
+  customSections:
+    - title: string
+      content:
+        - string
+
+  metadata:
+    lastUpdated: string
+    version: string
+    canonical: string
