@@ -28,7 +28,6 @@ os.makedirs(app.config["UPLOAD_FOLDER"], exist_ok=True)
 ALLOWED_EXTENSIONS = {"pdf", "docx"}
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
-
 def allowed_file(filename):
     return "." in filename and filename.rsplit(".", 1)[1].lower() in ALLOWED_EXTENSIONS
 
@@ -72,7 +71,7 @@ def process_resume_with_ai(text):
         raise Exception("Failed to process with AI")
 
     result = response.json()
-    print(result)
+
     try:
         # Extract the JSON from the AI response
         content = result["choices"][0]["message"]["content"]
@@ -89,6 +88,12 @@ def process_resume_with_ai(text):
 
 @app.route("/parse", methods=["POST"])
 def parse_resume():
+    SECURE_API_KEY = os.getenv("SECURE_API_KEY", None)
+    if SECURE_API_KEY is not None:
+        api_key = request.headers.get('x-api-key')
+        if api_key != SECURE_API_KEY or api_key is None:
+            return jsonify({"error": "Unauthorized"}), 401
+
     if "file" not in request.files:
         return jsonify({"error": "No file provided"}), 400
 
@@ -123,6 +128,7 @@ def parse_resume():
             os.remove(file_path)
             return jsonify({"error": "Unsupported file type"}), 400
 
+        print(f"Processing with AI")
         # Process with AI
         result = process_resume_with_ai(text)
 
