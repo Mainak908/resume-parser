@@ -1,7 +1,7 @@
 # OpenRouter Configuration
 site:
   name: "Resume Parser API"
-  url: "https://localhost:5000"
+  url: "https://github.com/orasik/resume-parser/"
 
 # Not all models support JSON Schema output. See the list here: https://openrouter.ai/models?fmt=cards&order=newest&supported_parameters=structured_outputs
 # Max of 3 models
