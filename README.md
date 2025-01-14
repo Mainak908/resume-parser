@@ -9,7 +9,7 @@ API that accepts PDF or DOCX resumes converts them to text and uses OpenRouter A
 Resume parsing is expensive and requires monthly fees. For low volume, it can cost around $0.10 per resume. Using this API, the cost is at least 100x cheaper with no monthly commitment.
 
 ## Limitations
-As it is LLM-based, results might be inconsistent or missing some info; use caution.
+As it is LLM-based, results might be inconsistent or missing some info; use with caution.
 
 The parsing time is longer than the traditional resume parser, based on resume length, model TPS (Tokens Per Second), and model load.
 
