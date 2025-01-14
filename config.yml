@@ -6,7 +6,7 @@ site:
 # Not all models support JSON Schema output. See the list here: https://openrouter.ai/models?fmt=cards&order=newest&supported_parameters=structured_outputs
 # Max of 3 models
 models:
-  - "google/gemini-2.0-flash-thinking-exp:free"
+  - "google/gemini-flash-1.5-8b"
   - "google/gemini-2.0-flash-exp:free"
   - "google/gemini-exp-1121:free"
 
