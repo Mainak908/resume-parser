@@ -1,16 +1,17 @@
 # Resume Parser API
 
-[](./img/resume-parser.png)
-API that accepts PDF or DOCX resumes, converts them to text, and uses OpenRouter API to extract structured information.
+![resume-parser](https://github.com/user-attachments/assets/97bd4fe5-7e7f-43dc-9e60-71b0ed54877e)
+
+API that accepts PDF or DOCX resumes converts them to text and uses OpenRouter API to extract structured information.
 
 ## Why
 
-Resume parsing is expensive and requires monthly fees. For low volume, it can costs around $0.10 per resume. Using this API, the cost is at least 100x cheaper with no monthly commitment.
+Resume parsing is expensive and requires monthly fees. For low volume, it can cost around $0.10 per resume. Using this API, the cost is at least 100x cheaper with no monthly commitment.
 
 ## Limitations
-As its LLM based, results might be inconsistent or missing some info, use with caution.
+As it is LLM-based, results might be inconsistent or missing some info; use caution.
 
-The parse time is longer than traditional resume parser, as this is based on resume length,model TPS (Tokens Per Second) and model load.
+The parsing time is longer than the traditional resume parser, based on resume length, model TPS (Tokens Per Second), and model load.
 
 ## Setup
 
@@ -47,7 +48,7 @@ The API accepts both PDF and DOCX files and returns a structured JSON response c
 
 ## Response Format
 
-The API returns a JSON object based on the schema provided in the `config.yml` file. The default one would return the following structure:
+The API returns a JSON object based on the schema in the `config.yml` file. The default one would return the following structure:
 - basics (name, contact info, location, etc.)
 - work experience
 - education
@@ -73,5 +74,5 @@ The API returns appropriate error messages for:
 
 ## File Size Limit
 
-The maximum file size is 16MB. Can be changed from the `config.yml` file.
+The maximum file size is 16MB. It can be changed from the `config.yml` file.
 
