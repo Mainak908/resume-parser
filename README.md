@@ -4,6 +4,7 @@
 
 API that accepts PDF or DOCX resumes converts them to text and uses OpenRouter API to extract structured information.
 
+Used by [Resume Yay | Free AI Resume Builder](https://resumeyay.com)
 ## Why
 
 Resume parsing is expensive and requires monthly fees. For low volume, it can cost around $0.10 per resume. Using this API, the cost is at least 100x cheaper with no monthly commitment.
