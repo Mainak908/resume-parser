@@ -57,3 +57,7 @@ wheel==0.45.1
 XlsxWriter==3.2.0
 youtube-transcript-api==0.6.3
 gunicorn==23.0.0
+pytesseract
+pdf2image
+openpyxl
+flask_cors 
