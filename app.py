@@ -29,7 +29,8 @@ def load_config():
 # Load configuration
 config = load_config()
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:3000"])
+ORIGIN = os.getenv("FRONT_URI")
+CORS(app, origins=[ORIGIN])
 
 app.config["MAX_CONTENT_LENGTH"] = int(config["general"]["max_file_size"])
 app.config["UPLOAD_FOLDER"] = config["general"]["upload_folder"]
